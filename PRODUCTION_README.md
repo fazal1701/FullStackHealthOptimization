@@ -34,7 +34,7 @@ A comprehensive, production-ready health optimization platform that combines mac
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   Frontend      │    │   Backend API   │    │   ML Pipeline   │
-│   (Next.js)     │◄──►│   (FastAPI)     │◄──►│   (Python)      │
+│   (Next.js)     │◄──►│   (Frontend Only) │◄──►│   (Mock Data)      │
 │                 │    │                 │    │                 │
 │ • Patient UI    │    │ • Authentication│    │ • Risk Models   │
 │ • Doctor UI     │    │ • Device APIs   │    │ • SHAP Explain  │
@@ -56,7 +56,6 @@ A comprehensive, production-ready health optimization platform that combines mac
 ### Prerequisites
 - Docker & Docker Compose
 - Node.js 18+ (for local frontend development)
-- Python 3.11+ (for ML development)
 
 ### 1. Clone and Setup
 ```bash
@@ -157,14 +156,8 @@ OURA_CLIENT_SECRET=your_oura_client_secret
 
 ### Run Tests
 ```bash
-# Backend tests
-cd backend && python -m pytest
-
 # Frontend tests
 npm run test
-
-# ML model tests
-cd ml_pipeline && python -m pytest
 ```
 
 ### Generate Test Data
@@ -257,7 +250,7 @@ curl -X POST "http://localhost:8000/devices/sync" \
 ### Development Workflow
 1. Fork the repository
 2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Run tests: `npm test && python -m pytest`
+3. Run tests: `npm test`
 4. Commit changes: `git commit -m 'Add amazing feature'`
 5. Push to branch: `git push origin feature/amazing-feature`
 6. Open Pull Request
@@ -276,7 +269,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Clinical Advisors**: Dr. Sarah Chen (Preventive Cardiology), Dr. Michael Rodriguez (Clinical Ethics)
 - **Research**: Based on latest evidence from preventive medicine and AI fairness literature
-- **Open Source**: Built on amazing open-source libraries (FastAPI, Next.js, scikit-learn, SHAP)
+- **Open Source**: Built on amazing open-source libraries (Next.js, scikit-learn, SHAP)
 
 ---
 

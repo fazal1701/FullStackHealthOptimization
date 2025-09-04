@@ -1,6 +1,6 @@
-# LongevityLab
+# Health Optimization Platform
 
-A comprehensive AI-powered precision medicine platform featuring dual dashboards for patients and healthcare providers, with integrated wearable device support, advanced longevity analytics, and personalized health optimization protocols.
+This project is now frontend-only (Next.js, TypeScript, Tailwind CSS) and uses mock data everywhere. No backend, Python, FastAPI, or ML pipeline is required.
 
 ## 🌟 Features
 
