@@ -1,10 +1,7 @@
 import { getJSON } from '@/lib/fetch';
-import dynamic from 'next/dynamic';
 import { EducationPanel } from '@/components/education-panel';
 import type { RiskScore, FeatureAttribution } from '@/lib/types';
-
-const AttributionBar = dynamic(() => import('@/components/charts/attribution-bar').then(m => m.AttributionBar), { ssr: false });
-const SHAPWaterfall = dynamic(() => import('@/components/charts/waterfall').then(m => m.SHAPWaterfall), { ssr: false });
+import { RiskChartsClient } from '@/components/risk-charts-client';
 
 // --- Server fetches (mocked for now) ---
 async function getRiskData(userId: string) {
@@ -52,11 +49,11 @@ export default async function RiskPage({ searchParams }: { searchParams: { view?
                 <li>VO₂max is above average for your age.</li>
                 <li>Sleep quality is good.</li>
               </ul>
-              <AttributionBar attributions={attributions} />
+              <RiskChartsClient attributions={attributions} risk={risk} view={view} />
             </>
           ) : (
             <>
-              <SHAPWaterfall attributions={attributions} baseline={0.10} score={risk.score} />
+              <RiskChartsClient attributions={attributions} risk={risk} view={view} />
               <table className="mt-4 w-full text-xs border">
                 <thead>
                   <tr className="bg-gray-50">

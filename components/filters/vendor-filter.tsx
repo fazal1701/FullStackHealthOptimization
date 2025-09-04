@@ -1,7 +1,6 @@
 "use client";
 import * as React from "react";
 import * as Select from "@radix-ui/react-select";
-import { useQueryState } from "nuqs";
 import type { DeviceLink } from "@/lib/types";
 
 export interface VendorFilterProps {
@@ -11,12 +10,10 @@ export interface VendorFilterProps {
 }
 
 export const VendorFilter: React.FC<VendorFilterProps> = ({ vendors, value, onChange }) => {
-  const [selected, setSelected] = useQueryState("vendor", {
-    defaultValue: "all"
-  });
+  const [selected, setSelected] = React.useState<string>(value || "all");
   const handleChange = (v: string) => {
     setSelected(v);
-    onChange?.(v as DeviceLink["vendor"] | "all");
+    if (onChange) onChange(v as DeviceLink["vendor"] | "all");
   };
   return (
     <Select.Root value={value ?? selected} onValueChange={handleChange}>
