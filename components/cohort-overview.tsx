@@ -97,9 +97,9 @@ export function CohortOverview() {
           { name: 'High Risk', value: derivedRisk.high, color: RISK_COLORS.high }
         ]
       : [
-          { name: 'Low Risk', value: cohortData.riskDistribution.low, color: RISK_COLORS.low },
-          { name: 'Moderate Risk', value: cohortData.riskDistribution.moderate, color: RISK_COLORS.moderate },
-          { name: 'High Risk', value: cohortData.riskDistribution.high, color: RISK_COLORS.high }
+    { name: 'Low Risk', value: cohortData.riskDistribution.low, color: RISK_COLORS.low },
+    { name: 'Moderate Risk', value: cohortData.riskDistribution.moderate, color: RISK_COLORS.moderate },
+    { name: 'High Risk', value: cohortData.riskDistribution.high, color: RISK_COLORS.high }
         ]
   );
 
@@ -126,10 +126,10 @@ export function CohortOverview() {
         </div>
         <div className="flex items-center space-x-2">
           <Link href="/demo">
-            <Button variant="outline" size="sm">
-              <Download className="w-4 h-4 mr-2" />
-              Export Report
-            </Button>
+          <Button variant="outline" size="sm">
+            <Download className="w-4 h-4 mr-2" />
+            Export Report
+          </Button>
           </Link>
         </div>
       </div>
@@ -313,7 +313,7 @@ export function CohortOverview() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="text-lg">Condition Prevalence</CardTitle>
+            <CardTitle className="text-lg">Condition Prevalence</CardTitle>
               <span className="text-xs text-gray-500">Model: ConditionRisk-XGB v1.2</span>
             </div>
           </CardHeader>

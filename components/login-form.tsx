@@ -119,15 +119,15 @@ export function LoginForm() {
               >
                 Patient Demo
               </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full"
+            <Button
+              variant="outline"
+              size="sm"
+              className="w-full"
                 onClick={() => launchDemo('doctor')}
                 disabled={isLoading}
-              >
+            >
                 Doctor Demo
-              </Button>
+            </Button>
             </div>
             <p className="text-xs text-gray-500 text-center">
               Or prefill then Sign In:

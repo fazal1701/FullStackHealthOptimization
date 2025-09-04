@@ -1,6 +1,7 @@
 """
 Health API - FastAPI backend for health optimization platform
-Integrates ML models, device data, and provides real-time health insights
+
+NOTE: This backend is configured for DEMO/LOCAL USE ONLY. All endpoints return mock data. No real device, ML, or database integration is active.
 """
 
 from fastapi import FastAPI, HTTPException, Depends, BackgroundTasks
@@ -233,28 +234,7 @@ async def predict_health_risks(user: dict = Depends(get_current_user)):
         # Mock patient data for ML model (in production, get from database)
         mock_patient_data = {
             'apoB_mg_dl': 120.0,
-            'lp_a_mg_dl': 45.0,
-            'ldl_c_mg_dl': 110.0,
-            'hdl_c_mg_dl': 55.0,
-            'triglycerides_mg_dl': 120.0,
-            'hba1c_percent': 5.8,
-            'fasting_glucose_mg_dl': 95.0,
-            'homa_ir': 2.1,
-            'hs_crp_mg_l': 1.2,
-            'homocysteine_umol_l': 8.5,
-            'systolic_bp_mmhg': 125.0,
-            'diastolic_bp_mmhg': 80.0,
-            'resting_hr_bpm': 58.0,
-            'vo2_max_ml_kg_min': 42.1,
-            'grip_strength_kg': 45.0,
-            'sleep_efficiency_percent': 88.0,
-            'hrv_rmssd_ms': 45.2,
-            'physical_activity_min_week': 180.0,
-            'smoking_status': 'never',
-            'alcohol_drinks_week': 3.0,
-            'age_years': 39.0,
-            'sex': 'male',
-            'family_history_cad': 'no'
+            "risk_predictions": risk_predictions
         }
         
         # Mock risk predictions (in production, use trained models)

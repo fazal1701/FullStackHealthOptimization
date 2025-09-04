@@ -1,12 +1,11 @@
 import { getJSON } from '@/lib/fetch';
 import dynamic from 'next/dynamic';
 import { VendorFilter } from '@/components/filters/vendor-filter';
-// import { TrendSparkline } from '@/components/charts/trend-sparkline'; // TODO: implement
 import type { BiometricSample, DeviceLink } from '@/lib/types';
 
 // --- Server fetches (mocked for now) ---
 async function getMetricsData(userId: string) {
-  // Replace with real API calls
+  // Only use mock data for demo
   const biometrics: BiometricSample[] = [
     { id: 'b1', userId: 'patient-1', source: 'fitbit', metric: 'steps', value: 8500, unit: 'steps', takenAt: '2024-06-01' },
     { id: 'b2', userId: 'patient-1', source: 'oura', metric: 'sleep_score', value: 82, unit: 'score', takenAt: '2024-06-01' }
@@ -16,10 +15,8 @@ async function getMetricsData(userId: string) {
 }
 
 export default async function MetricsPage({ searchParams }: { searchParams: Record<string, string> }) {
-  // In real app, get userId from session/auth
+  // Always use mock user for demo
   const { biometrics, vendors } = await getMetricsData('patient-1');
-  // TODO: Use nuqs for vendor/metric/date filters
-  // TODO: Implement TrendSparkline and CSVUploadIsland
 
   return (
     <main className="max-w-3xl mx-auto py-8 px-4 space-y-8">

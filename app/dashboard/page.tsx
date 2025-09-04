@@ -1,13 +1,11 @@
 import { getJSON } from '@/lib/fetch';
-import Image from 'next/image';
 import { EducationPanel } from '@/components/education-panel';
 import { VendorChip } from '@/components/vendor-chip';
-// import { RiskSparkline } from '@/components/charts/risk-sparkline'; // TODO: implement
 import type { UserProfile, DeviceLink, Vital, LabResult, RiskScore } from '@/lib/types';
 
 // --- Server fetches (mocked for now) ---
 async function getDashboardData(userId: string) {
-  // Replace with real API calls
+  // Only use mock data for demo
   const user: UserProfile = {
     id: 'patient-1',
     name: 'Sarah Johnson',
@@ -33,7 +31,7 @@ async function getDashboardData(userId: string) {
 }
 
 export default async function DashboardPage() {
-  // In real app, get userId from session/auth
+  // Always use mock user for demo
   const { user, devices, vitals, labs, risk } = await getDashboardData('patient-1');
 
   // --- Patient Hero ---
@@ -48,7 +46,7 @@ export default async function DashboardPage() {
   return (
     <main className="max-w-3xl mx-auto py-8 px-4 space-y-8">
       <header className="flex items-center gap-6">
-        <Image src="/images/patient-hero.svg" alt="Patient Hero" width={96} height={96} priority />
+        <img src="/images/patient-hero.svg" alt="Patient Hero" width={96} height={96} />
         <div>
           <h1 className="text-2xl font-bold">Welcome, {user.name}</h1>
           <div className="flex gap-2 mt-2">

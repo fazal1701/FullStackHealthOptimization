@@ -1,7 +1,6 @@
 import { getJSON } from '@/lib/fetch';
 import dynamic from 'next/dynamic';
 import { EducationPanel } from '@/components/education-panel';
-import { useQueryState } from 'nuqs/parsers';
 import type { RiskScore, FeatureAttribution } from '@/lib/types';
 
 const AttributionBar = dynamic(() => import('@/components/charts/attribution-bar').then(m => m.AttributionBar), { ssr: false });
@@ -9,7 +8,7 @@ const SHAPWaterfall = dynamic(() => import('@/components/charts/waterfall').then
 
 // --- Server fetches (mocked for now) ---
 async function getRiskData(userId: string) {
-  // Replace with real API calls
+  // Only use mock data for demo
   const risk: RiskScore = {
     id: 'r1', userId: 'patient-1', model: 'cvd10y', score: 0.08, band: 'low', ci95: [0.06, 0.11], computedAt: '2024-06-01'
   };
@@ -22,7 +21,7 @@ async function getRiskData(userId: string) {
 }
 
 export default async function RiskPage({ searchParams }: { searchParams: { view?: string } }) {
-  // In real app, get userId from session/auth
+  // Always use mock user for demo
   const { risk, attributions } = await getRiskData('patient-1');
   const view = searchParams.view === 'clinician' ? 'clinician' : 'patient';
 

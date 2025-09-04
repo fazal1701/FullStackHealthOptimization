@@ -30,7 +30,7 @@ export default function Home() {
               <div>
                 <h3 className="font-semibold">Patient Experience</h3>
                 <p className="text-sm text-gray-600">Personalized insights, risk rings, and wearable trends.</p>
-              </div>
+            </div>
             </div>
           </Link>
 
@@ -38,12 +38,12 @@ export default function Home() {
             <div className="p-6 flex items-center gap-4">
               <div className="h-12 w-12 rounded-lg bg-indigo-600 text-white flex items-center justify-center">
                 <Users className="h-6 w-6" />
-              </div>
+          </div>
               <div>
                 <h3 className="font-semibold">Clinician Dashboard</h3>
                 <p className="text-sm text-gray-600">Population risk stratification and decision support.</p>
-              </div>
-            </div>
+        </div>
+      </div>
           </Link>
 
           <div className="overflow-hidden rounded-xl border bg-gradient-to-br from-blue-500/10 to-cyan-500/10 shadow-sm">
